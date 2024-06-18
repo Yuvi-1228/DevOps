@@ -43,7 +43,7 @@ resource "aws_instance" "web" {
   ami           = var.ami_id                
   //ami         = each.value                  // If you are using for_each module for diiferent AMI         
   instance_type = var.instance_type
-  subnet_id     = aws_subnet.subnet1.id
+  subnet_id     = aws_subnet.subnet1.id 
   key_name      = aws_key_pair.deployer.key_name
   security_groups = [
     aws_security_group.allow_ssh.name
