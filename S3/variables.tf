@@ -4,12 +4,6 @@ variable "bucket_name" {
   default     = "my-unique-bucket-name"
 }
 
-variable "acl" {
-  description = "This is for access control list"
-  default = "private"
-  
-}
-
 variable "logs_bucket" {
   description = "The name of the bucket for storing logs"
   type        = string
