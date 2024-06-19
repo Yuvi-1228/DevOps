@@ -1,7 +1,7 @@
 #This file contains all the variable definitions.
 variable "aws_region" {
   description = "The AWS region to create resources in"
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "vpc_cidr" {
@@ -34,20 +34,62 @@ variable "allow_ssh_cidr" {
   default     = "0.0.0.0/0"
 }
 
-variable "ami_id" {
+# AMI ID LIST
+
+variable "ec2_amazon_ami" {
   description = "The ID of the AMI to use for the instance"
-  default     = "ami-0c55b159cbfafe1f0"  # Example AMI ID for Amazon Linux 2 in us-east-1; change as needed
+  default     = "ami-0e1d06225679bc1c5"  # This ID for Amazon Linux Server
 }
+
+variable "ec2_ubuntu_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-0f58b397bc5c1f2e8"  # This ID for Ubuntu Server
+}
+
+variable "ec2_mac_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-03e6eb5b158a325d9"  # This ID for MAC server
+}
+
+variable "ec2_win_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-09f6da726716a4ca6"  # This ID for Windows Server
+}
+
+variable "ec2_redhat_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-022ce6f32988af5fa"  # This ID for RedHat Server
+}
+
+variable "ec2_suse_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-032d99e94c84338c2"  # This ID for SUSE Server
+}
+
+variable "ec2_debian_ami" {
+  description = "The ID of the AMI to use for the instance"
+  default     = "ami-0850beb48a8b4bb46"  # This ID for Debian Server
+}
+
+# END OF AMI 
+# BEGIN FOR INSTANCE TYPE 
 
 variable "instance_type" {
   description = "The type of instance to use"
   default     = "t2.micro"
 }
 
+
+
+# END OF INSTANCE TYPE 
+#BEGIN FOR KEY NAME
+
 variable "key_name" {
   description = "The name of the key pair to use for SSH access"
   default     = "deployer-key"
 }
+
+# END OF KEY NAME
 
 variable "public_key_path" {
   description = "The path to the public key file"
